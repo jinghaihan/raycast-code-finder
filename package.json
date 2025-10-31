@@ -1,0 +1,146 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "code-finder",
+  "type": "module",
+  "title": "Code Finder",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.20.0",
+  "description": "",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/raycast-code-finder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/raycast-code-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/raycast-code-finder/issues"
+  },
+  "keywords": [
+    "vscode",
+    "cursor",
+    "windsurf",
+    "open",
+    "recent",
+    "history",
+    "projects",
+    "codespace"
+  ],
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "vscode",
+      "title": "Search Recent Projects",
+      "description": "List recent projects from VSCode and its forks, open with VSCode.",
+      "mode": "view",
+      "icon": "vscode-icon.png"
+    },
+    {
+      "name": "cursor",
+      "title": "Search Recent Projects",
+      "description": "List recent projects from VSCode and its forks, open with Cursor.",
+      "mode": "view",
+      "icon": "cursor-icon.png"
+    },
+    {
+      "name": "windsurf",
+      "title": "Search Recent Projects",
+      "description": "List recent projects from VSCode and its forks, open with Windsurf.",
+      "mode": "view",
+      "icon": "windsurf-icon.png"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "layout",
+      "title": "View Layout",
+      "type": "dropdown",
+      "required": false,
+      "default": "list",
+      "description": "Select the layout of the view",
+      "data": [
+        {
+          "value": "list",
+          "title": "List"
+        },
+        {
+          "value": "grid",
+          "title": "Grid"
+        }
+      ]
+    },
+    {
+      "name": "keepSectionOrder",
+      "type": "checkbox",
+      "title": "Advanced",
+      "required": false,
+      "label": "Keep Section Order",
+      "default": false,
+      "description": "Keep the order of the sections while searching folders, files, etc."
+    },
+    {
+      "name": "terminalApp",
+      "type": "appPicker",
+      "default": "com.apple.Terminal",
+      "required": false,
+      "title": "Terminal App",
+      "description": "Select which Terminal App to use when opening with a terminal"
+    },
+    {
+      "name": "showGitBranch",
+      "type": "checkbox",
+      "title": "Git Integration",
+      "required": false,
+      "label": "Show Git Branch",
+      "default": true,
+      "description": "Display the current Git branch for files and folders in Git repositories"
+    }
+  ],
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build -e dist",
+    "deps": "taze major -I",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "release": "bumpp",
+    "generate": "tsx ./scripts/generate.ts",
+    "prepare": "simple-git-hooks && pnpm generate",
+    "bootstrap": "pnpm install",
+    "prepublishOnly": "pnpm build",
+    "raycast:publish": "@raycast/api publish"
+  },
+  "platforms": [
+    "macOS"
+  ],
+  "dependencies": {
+    "@raycast/api": "catalog:raycast",
+    "@raycast/utils": "catalog:raycast",
+    "code-finder": "catalog:cli",
+    "lru-cache": "catalog:utils"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "@eslint-react/eslint-plugin": "catalog:lint",
+    "@types/node": "catalog:types",
+    "@types/react": "catalog:types",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:lint",
+    "eslint-plugin-react-hooks": "catalog:lint",
+    "eslint-plugin-react-refresh": "catalog:lint",
+    "lint-staged": "catalog:lint",
+    "pncat": "catalog:cli",
+    "react": "catalog:frontend",
+    "simple-git-hooks": "catalog:lint",
+    "taze": "catalog:cli",
+    "tsx": "catalog:script",
+    "typescript": "catalog:tsc",
+    "vitest": "catalog:test"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
