@@ -3,7 +3,7 @@
   "name": "code-finder",
   "type": "module",
   "title": "Code Finder",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@10.20.0",
   "description": "",
   "author": "jinghaihan",
