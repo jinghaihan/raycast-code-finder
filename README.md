@@ -3,7 +3,7 @@
 A Raycast extension that aggregates recent project history from VSCode and its forks (Cursor, Windsurf) into a unified list. Quickly search through all your projects across different editors and open them with your preferred code editor.
 
 ```sh
-npx rayext jinghaihan/raycast-code-finder
+npx rayext install jinghaihan/raycast-code-finder
 ```
 
 <div align="center">
