@@ -30,21 +30,21 @@
   "commands": [
     {
       "name": "vscode",
-      "title": "Search Recent Projects",
+      "title": "Open with VSCode",
       "description": "List recent projects from VSCode and its forks, open with VSCode.",
       "mode": "view",
       "icon": "vscode-icon.png"
     },
     {
       "name": "cursor",
-      "title": "Search Recent Projects",
+      "title": "Open with Cursor",
       "description": "List recent projects from VSCode and its forks, open with Cursor.",
       "mode": "view",
       "icon": "cursor-icon.png"
     },
     {
       "name": "windsurf",
-      "title": "Search Recent Projects",
+      "title": "Open with Windsurf",
       "description": "List recent projects from VSCode and its forks, open with Windsurf.",
       "mode": "view",
       "icon": "windsurf-icon.png"
@@ -94,6 +94,15 @@
       "label": "Show Git Branch",
       "default": true,
       "description": "Display the current Git branch for files and folders in Git repositories"
+    },
+    {
+      "name": "cacheTTL",
+      "type": "textfield",
+      "title": "Cache TTL",
+      "required": false,
+      "label": "Cache TTL",
+      "default": "30000",
+      "description": "The time to live for the cache in milliseconds"
     }
   ],
   "scripts": {

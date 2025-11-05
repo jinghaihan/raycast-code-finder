@@ -15,7 +15,9 @@ type ExtensionPreferences = {
   /** Terminal App - Select which Terminal App to use when opening with a terminal */
   "terminalApp"?: import("@raycast/api").Application,
   /** Git Integration - Display the current Git branch for files and folders in Git repositories */
-  "showGitBranch": boolean
+  "showGitBranch": boolean,
+  /** Cache TTL - The time to live for the cache in milliseconds */
+  "cacheTTL": string
 }
 
 /** Preferences accessible in all the extension's commands */

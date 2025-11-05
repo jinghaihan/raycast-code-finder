@@ -3,6 +3,7 @@ import { basename } from 'node:path'
 import { Alert, confirmAlert, Icon, showToast, Toast } from '@raycast/api'
 import { CODE_NAME_CHOICES, executeCommand, vscode } from 'code-finder'
 import { useEffect, useState } from 'react'
+import { getCachedData, setCachedData } from './cache'
 import { preferences } from './preferences'
 import { EntryType } from './types'
 
@@ -14,11 +15,19 @@ export function useDatabase() {
     async function getEntries() {
       setLoading(true)
 
+      const cached = await getCachedData()
+      if (cached) {
+        setEntries(cached)
+        setLoading(false)
+        return
+      }
+
       const result = await executeCommand({
         mode: 'combine',
         gitBranch: preferences.showGitBranch,
         tildify: true,
       })
+
       const entries = result.data.map((item) => {
         return {
           ...item,
@@ -29,6 +38,7 @@ export function useDatabase() {
         }
       })
       setEntries(entries)
+      await setCachedData(entries)
       setLoading(false)
     }
     getEntries()

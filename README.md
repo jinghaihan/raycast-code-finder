@@ -15,11 +15,11 @@ npx rayext install jinghaihan/raycast-code-finder
 
 <!-- commands -->
 
-| Title                    | Description                                                         |
-| ------------------------ | ------------------------------------------------------------------- |
-| `Search Recent Projects` | List recent projects from VSCode and its forks, open with VSCode.   |
-| `Search Recent Projects` | List recent projects from VSCode and its forks, open with Cursor.   |
-| `Search Recent Projects` | List recent projects from VSCode and its forks, open with Windsurf. |
+| Title                | Description                                                         |
+| -------------------- | ------------------------------------------------------------------- |
+| `Open with VSCode`   | List recent projects from VSCode and its forks, open with VSCode.   |
+| `Open with Cursor`   | List recent projects from VSCode and its forks, open with Cursor.   |
+| `Open with Windsurf` | List recent projects from VSCode and its forks, open with Windsurf. |
 
 <!-- commands -->
 
@@ -33,6 +33,7 @@ npx rayext install jinghaihan/raycast-code-finder
 | `keepSectionOrder` | Keep the order of the sections while searching folders, files, etc.      | `No`     | false              |
 | `terminalApp`      | Select which Terminal App to use when opening with a terminal            | `No`     | com.apple.Terminal |
 | `showGitBranch`    | Display the current Git branch for files and folders in Git repositories | `No`     | true               |
+| `cacheTTL`         | The time to live for the cache in seconds                                | `No`     | 30000              |
 
 <!-- configs -->
 
