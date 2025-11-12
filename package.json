@@ -5,7 +5,7 @@
   "title": "Code Finder",
   "version": "0.1.1",
   "packageManager": "pnpm@10.20.0",
-  "description": "",
+  "description": "Merge recent projects across VSCode and its forks.",
   "author": "jinghaihan",
   "license": "MIT",
   "homepage": "https://github.com/jinghaihan/raycast-code-finder#readme",
