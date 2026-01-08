@@ -17,17 +17,19 @@ async function cachedGetApplications() {
   }
 }
 
+/// keep-sorted
 // Map of build names to bundle IDs
 const bundleIdMap: Record<string, string> = {
-  'Code': 'com.microsoft.VSCode',
+  'Antigravity': 'com.google.antigravity',
   'Code - Insiders': 'com.microsoft.VSCodeInsiders',
+  'Code': 'com.microsoft.VSCode',
   'Cursor': 'com.todesktop.230313mzl4w4u92',
   'Kiro': 'dev.kiro.desktop',
   'Positron': 'com.rstudio.positron',
-  'Trae': 'com.trae.app',
   'Trae CN': 'cn.trae.app',
-  'VSCodium': 'com.vscodium',
+  'Trae': 'com.trae.app',
   'VSCodium - Insiders': 'com.vscodium.VSCodiumInsiders',
+  'VSCodium': 'com.vscodium',
   'Windsurf': 'com.exafunction.windsurf',
 }
 

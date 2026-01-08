@@ -4,4 +4,7 @@ export default antfu({
   react: true,
   jsx: true,
   ignores: ['raycast-env.d.ts'],
+  rules: {
+    'pnpm/yaml-enforce-settings': 'off',
+  },
 })

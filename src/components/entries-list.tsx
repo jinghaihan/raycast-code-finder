@@ -2,14 +2,30 @@ import type { Application, List } from '@raycast/api'
 import type { EditorName } from 'code-finder'
 import type { EntryItem, PinMethods, RemoveMethods } from '../types'
 import { fileURLToPath } from 'node:url'
-import { Action, ActionPanel, Grid, Icon, open, openExtensionPreferences, showToast, Toast } from '@raycast/api'
+import {
+  Action,
+  ActionPanel,
+  Grid,
+  Icon,
+  open,
+  openExtensionPreferences,
+  showToast,
+  Toast,
+} from '@raycast/api'
 import { usePromise } from '@raycast/utils'
 import { EDITOR_NAME_MAP } from 'code-finder'
 import { useCallback, useState } from 'react'
 import { stringToColor } from '../color'
 import { useDatabase } from '../database'
 import { getBundleId, getEditorApplication } from '../editor'
-import { Layout, LayoutDropdown, LayoutDropdownItem, LayoutDropdownSection, LayoutItem, LayoutSection } from '../layout'
+import {
+  Layout,
+  LayoutDropdown,
+  LayoutDropdownItem,
+  LayoutDropdownSection,
+  LayoutItem,
+  LayoutSection,
+} from '../layout'
 import { usePinnedEntries } from '../pinned'
 import { preferences } from '../preferences'
 import { PinActionSection } from '../sections/pinned'
@@ -81,6 +97,10 @@ function ListItem(props: { entry: EntryItem, editor: EditorName, editorApp?: App
 
   const subTitle = preferences.layout === 'grid' ? `${gitBranch} • ${path}` : path
 
+  const openProject = () => {
+    open(props.entry.uri, bundleIdentifier)
+  }
+
   return (
     <LayoutItem
       id={path}
@@ -96,7 +116,7 @@ function ListItem(props: { entry: EntryItem, editor: EditorName, editorApp?: App
             <Action
               title={title}
               icon={props.editorApp ? { fileIcon: props.editorApp.path } : 'action-icon.png'}
-              onAction={() => open(props.entry.uri, bundleIdentifier)}
+              onAction={openProject}
             />
             <Action.ShowInFinder path={filePath} />
             <Action.OpenWith path={filePath} shortcut={{ modifiers: ['cmd'], key: 'o' }} />

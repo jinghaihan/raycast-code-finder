@@ -4,7 +4,7 @@
   "type": "module",
   "title": "Code Finder",
   "version": "0.1.1",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.27.0",
   "description": "Merge recent projects across VSCode and its forks.",
   "author": "jinghaihan",
   "license": "MIT",
@@ -48,6 +48,13 @@
       "description": "List recent projects from VSCode and its forks, open with Windsurf.",
       "mode": "view",
       "icon": "windsurf-icon.png"
+    },
+    {
+      "name": "antigravity",
+      "title": "Open with Antigravity",
+      "description": "List recent projects from VSCode and its forks, open with Antigravity.",
+      "mode": "view",
+      "icon": "antigravity-icon.png"
     }
   ],
   "preferences": [

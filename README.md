@@ -33,7 +33,7 @@ npx rayext install jinghaihan/raycast-code-finder
 | `keepSectionOrder` | Keep the order of the sections while searching folders, files, etc.      | `No`     | false              |
 | `terminalApp`      | Select which Terminal App to use when opening with a terminal            | `No`     | com.apple.Terminal |
 | `showGitBranch`    | Display the current Git branch for files and folders in Git repositories | `No`     | true               |
-| `cacheTTL`         | The time to live for the cache in seconds                                | `No`     | 30000              |
+| `cacheTTL`         | The time to live for the cache in milliseconds                           | `No`     | 30000              |
 
 <!-- configs -->
 

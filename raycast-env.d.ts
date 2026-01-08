@@ -30,6 +30,8 @@ declare namespace Preferences {
   export type Cursor = ExtensionPreferences & {}
   /** Preferences accessible in the `windsurf` command */
   export type Windsurf = ExtensionPreferences & {}
+  /** Preferences accessible in the `antigravity` command */
+  export type Antigravity = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
@@ -39,5 +41,7 @@ declare namespace Arguments {
   export type Cursor = {}
   /** Arguments passed to the `windsurf` command */
   export type Windsurf = {}
+  /** Arguments passed to the `antigravity` command */
+  export type Antigravity = {}
 }
 
