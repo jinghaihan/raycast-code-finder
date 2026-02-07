@@ -1,6 +1,7 @@
 import type { Application, List } from '@raycast/api'
 import type { EditorName } from 'code-finder'
 import type { EntryItem, PinMethods, RemoveMethods } from '../types'
+import { execFile } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import {
   Action,
@@ -98,7 +99,13 @@ function ListItem(props: { entry: EntryItem, editor: EditorName, editorApp?: App
   const subTitle = preferences.layout === 'grid' ? `${gitBranch} • ${path}` : path
 
   const openProject = () => {
-    open(props.entry.uri, bundleIdentifier)
+    const target = filePath || path
+    execFile('open', ['-b', bundleIdentifier, target], (err) => {
+      if (err)
+        showToast(Toast.Style.Failure, `Failed to open with ${EDITOR_NAME_MAP[props.editor] ?? props.editor}`)
+    })
+    // open is not working, but `open -b` can not auto close the window
+    open(target, bundleIdentifier)
   }
 
   return (
