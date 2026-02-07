@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 import {
   Action,
   ActionPanel,
+  closeMainWindow,
   Grid,
   Icon,
   open,
@@ -105,7 +106,7 @@ function ListItem(props: { entry: EntryItem, editor: EditorName, editorApp?: App
         showToast(Toast.Style.Failure, `Failed to open with ${EDITOR_NAME_MAP[props.editor] ?? props.editor}`)
     })
     // open is not working, but `open -b` can not auto close the window
-    open(target, bundleIdentifier)
+    closeMainWindow()
   }
 
   return (
